@@ -14,14 +14,9 @@ import { Title } from "@angular/platform-browser";
 @Injectable()
 export class AuthService {
   jwt_token = "auth-token";
-  refresh_token = "refresh-token";
-  rememberUser = "remember-user";
   authUserInfo = "user-data";
   userInfo = "user-data-auth";
 
-  public socket: any;
-  public smsMobileNumber: BehaviorSubject<any> = new BehaviorSubject("");
-  public tokenValid: BehaviorSubject<any> = new BehaviorSubject("");
   constructor(
     private http_client: HttpClientService,
     private router: Router,
@@ -29,19 +24,12 @@ export class AuthService {
     private title: Title
   ) {}
 
-  setTokenValid(data: any) {
-    this.tokenValid.next(data);
-  }
   getAuthToken() {
     return localStorage.getItem(this.jwt_token) || null;
   }
 
   setAuhToken(token: string) {
     localStorage.setItem(this.jwt_token, token);
-  }
-
-  destroyToken() {
-    window.localStorage.removeItem(this.jwt_token);
   }
 
   setTitle(title: string) {
@@ -89,7 +77,6 @@ export class AuthService {
     this.setAuhToken("");
     this.setUserInfoAuth("");
     this.router.navigate(["/login"]);
-    // return true;
   }
 
   openConfimationModal() {

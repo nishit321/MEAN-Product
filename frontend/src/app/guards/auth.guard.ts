@@ -4,13 +4,13 @@ import {
   RouterStateSnapshot,
   UrlTree,
   CanActivate,
-  Router
+  Router,
 } from "@angular/router";
 import { Observable } from "rxjs";
 import { AuthService } from "../core/services/auth.service";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private authService: AuthService) {}
@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
     console.log("auth guard token", token);
     if (!token) {
       console.log("route data : ", route.data);
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/users/login"]);
       return false;
     } else {
       return true;

@@ -50,6 +50,6 @@ export class CustomInterceptor implements HttpInterceptor {
 
   logoutUser(error) {
     this.authService.logout();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/users/login"]);
   }
 }
