@@ -11,8 +11,8 @@
     "port": "3000"
   },
   "aws": {
-    "AWS_ACCESS_KEY": "AKIAVNJHNQPRSSV4VVN4",
-    "AWS_SCERET": "DMKQuLhgL35lXg20jXfIq0E08uvj2jtnALk7/QW1",
+    "AWS_ACCESS_KEY": "AWS_ACCESS_KEY_HERE",
+    "AWS_SCERET": "AWS_SCERET_KEY_HERE",
     "BUCKET_NAME": "mygeneralbucketnew"
   }
 }
