@@ -1,0 +1,34 @@
+
+<div class="container">
+  <h2>Product Table</h2>
+  <a class="btn btn-primary" style="float: right;" href="javascript:void(0);" routerLink="/users/create-product">Create Product</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Category Name</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Net Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="products.length">
+      <tr *ngFor="let product of products | paginate: { itemsPerPage: 10, currentPage: pageNumber }">
+        <td>{{product.name}}</td>
+        <td>{{product.category[0].name}}</td>
+        <td>${{product.price}}</td>
+        <td>${{product.discount}}</td>
+        <td>${{product.netPrice}}</td>
+        <td> <a class="btn btn-light" (click)="viewProduct(product._id)" href="javascript:void(0);">View</a> | <a class="btn btn-light"
+            (click)="updateProduct(product._id)"
+            href="javascript:void(0);">Edit</a> | <a
+            class="btn btn-light" (click)="delete(product._id)" href="javascript:void(0);">Delete</a></td>
+      </tr>
+    </tbody>
+    <pagination-controls *ngIf="products.length" (pageChange)="p= $event"></pagination-controls>
+  </table>
+  <div *ngIf="!products.length">
+    <p class="text-center">No Record Found</p>
+  </div>
+</div>

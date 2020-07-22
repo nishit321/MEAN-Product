@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Login Form</h2>
+  <form
+    role="form"
+    name="loginForm"
+    [formGroup]="loginForm"
+    (ngSubmit)="login(loginForm)">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        autocomplete="off"
+        name="Email1"
+        id="Email"
+        placeholder="Email Address"
+        formControlName="email"
+        class="form-control"
+        />
+
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          loginForm.controls['email'].hasError('required')">
+          This field is required
+        </span>
+      </label>
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          loginForm.controls['email'].hasError('email')">
+          The email address that you've entered doesn't match any
+          account.
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input
+        #input
+        type="password"
+        name="password"
+        id="Password"
+        placeholder="Password"
+        formControlName="password"
+        class="form-control"
+        />
+
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          loginForm.controls['password'].hasError('required')">
+          This field is required
+        </span>
+      </label>
+    </div>
+    <a routerLink="/signup">Signup ?</a> <br/>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

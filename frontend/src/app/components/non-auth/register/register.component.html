@@ -1,0 +1,126 @@
+<div class="container">
+  <h2>Singup Form</h2>
+  <form
+    role="form"
+    [formGroup]="signUpForm"
+    (ngSubmit)="register(signUpForm)">
+    <div class="form-group">
+      <label for="text">First Name:</label>
+      <input
+        type="text"
+        placeholder="First Name"
+        formControlName="first_name"
+        class="form-control"
+        />
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          signUpForm.controls['first_name'].hasError('required')">
+          This field is required
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="email">Last Name:</label>
+      <input
+        type="text"
+        placeholder="Last Name"
+        formControlName="last_name"
+        class="form-control"
+        />
+
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          signUpForm.controls['last_name'].hasError('required')">
+          This field is required
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        autocomplete="off"
+        name="Email1"
+        id="Email"
+        placeholder="Email Address"
+        formControlName="email"
+        class="form-control"
+        />
+
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          signUpForm.controls['email'].hasError('required')">
+          This field is required
+        </span>
+      </label>
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          signUpForm.controls['email'].hasError('email')">
+          The email address that you've entered doesn't match any
+          account.
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input
+        #input
+        type="password"
+        name="password"
+        id="Password"
+        placeholder="Password"
+        formControlName="password"
+        class="form-control"
+        />
+
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          signUpForm.controls['password'].hasError('required')">
+          This field is required
+        </span>
+        <span class="errmsg" *ngIf="isFormSubmitted &&
+          signUpForm.controls['password'].touched &&
+          signUpForm.controls['password'].hasError('pattern')">
+          Password must have minimum 6 letters with 1 capital letter, 1 special character and 1 numeric letter
+        </span>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input
+        #input
+        type="password"
+        placeholder="Password"
+        formControlName="retypepassword"
+        class="form-control"
+        />
+
+      <label class="errmsg">
+        <span
+          *ngIf="isFormSubmitted &&
+          signUpForm.controls['retypepassword'].hasError('required')">
+          This field is required
+        </span>
+        <span class="errmsg" *ngIf="(isFormSubmitted &&
+          signUpForm.controls['retypepassword'].touched &&
+          signUpForm.controls['retypepassword'].hasError(
+          'mustMatch'
+          )) ||
+          (isFormSubmitted &&
+          signUpForm.controls['retypepassword'].hasError(
+          'mustMatch'
+          ))">
+          New Password and Confirm Password should be same
+        </span>
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

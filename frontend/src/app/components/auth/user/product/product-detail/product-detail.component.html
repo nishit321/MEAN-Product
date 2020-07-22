@@ -1,0 +1,62 @@
+<div class="container">
+  <h2> Product Detail</h2>
+  <br />
+  <div class="row">
+    <div class="col-md-6">
+      Product Image
+    </div>
+    <div class="col-md-6">
+      <img *ngIf="!!product.image" width="150px" height="150px"
+        src="{{product.image}}" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Product Name
+    </div>
+    <div class="col-md-6">
+      {{product.name}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Product Description
+    </div>
+    <div class="col-md-6">
+      {{product.description}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Product Category
+    </div>
+    <div class="col-md-6">
+      {{product.category[0].name}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Product Price
+    </div>
+    <div class="col-md-6">
+      ${{product.price}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Product Discount
+    </div>
+    <div class="col-md-6">
+      ${{product.discount}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      Product Net Price
+    </div>
+    <div class="col-md-6">
+      ${{product.netPrice}}
+    </div>
+  </div>
+  <a routerLink="/users/product" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,17 @@
+{
+    "/api": {
+        "target": "/api",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/public": {
+        "target": "/public",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/oauth": {
+        "target": "/oauth",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

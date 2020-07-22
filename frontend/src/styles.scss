@@ -1,0 +1,110 @@
+@import "assets/base";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "../node_modules/animate.css/animate.min.css";
+@import "../node_modules/ngx-toastr/toastr.css";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "assets/styles/style.scss";
+@import "assets/styles/awesome-bootstrap-checkbox.css";
+
+.horizontal-pagination {
+  display: inline-flex;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+  border-color: #5b8eda;
+  box-shadow: none;
+}
+
+.ng-select .ng-select-container {
+  border-radius: 0px;
+  border: 1px solid #e5e6e7;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+  background-color: #5b8eda;
+  color: #eef3fb;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.left {
+  border-right: 1px solid #5b8eda;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.left:hover {
+  background-color: #5b8eda;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+  background-color: #eef3fb;
+  color: #333;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+  color: #333;
+  background-color: #eef3fb;
+}
+
+ngx-dropzone {
+  margin: 10px 0 0 0;
+  color: #bbb !important;
+  border: 2px dashed #5b8eda !important;
+  height: 100px !important;
+
+  .dropzone {
+    min-height: 90px;
+    border: none;
+    background: white;
+    padding: 12px;
+
+    .preview {
+      .preview-item {
+        span {
+          padding: 0 !important;
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
+
+.logo-name {
+  color: #e6e6e6;
+  font-size: 180px;
+  font-weight: 800;
+  letter-spacing: -10px;
+  margin-bottom: 0;
+  margin-left: -38px;
+}
+
+.custom-error {
+  margin: 5px 0 0 2px;
+}
+
+.custom-info {
+  font-size: 10px;
+  margin: 5px 0 0 2px;
+}
+
+.image-cancel {
+  position: absolute;
+  margin-right: 30px;
+  margin-top: 10px;
+  right: 0px;
+}
+
+#toast-container>.toast-error:before {
+  content: none;
+}
+
+#toast-container>.toast-warn:before {
+  content: none;
+}
+
+#toast-container>.toast-success:before {
+  content: none;
+}
+
+#toast-container>.toast-info:before {
+  content: none;
+}
